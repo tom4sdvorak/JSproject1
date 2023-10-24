@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>TODO Project</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="todo.js"></script>
+      </head>
+      <body onload="loadList()">
+            <div class="container">
+                <div class="elem-containers" id="toDoAdd">
+                    <form name="toDoForm" action="#" onsubmit="addNewTask()">
+                        Task: <input type="text" name="task" id="newTask" minlength="3" required>
+                        <input type="submit" id="addButton" value="Add Task">
+                    </form>
+                </div>
+                <div class="elem-containers">
+                    <h3>To Do</h3>
+                    <ul id="toDoList">
+                    </ul>
+                </div>
+                <div class="elem-containers">
+                    <h3>Completed</h3>
+                    <input type="button" id="toggleButton" value="⇈" onclick="toggleDoneList()">
+                    <input type="button" id="clearButton" value="Clear Completed" onclick="clearDoneList()">                           
+                    <ul id="doneList">
+                    </ul>
+                </div>   
+            </div>
+      </body>
+</html>

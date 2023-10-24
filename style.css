@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: aqua;
+    width: min(80vw, 1000px);
+    margin: auto;
+}
+
+.elem-containers {
+    margin: auto;
+    width: min(80vw, 80%);
+}
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+.itemCheckbox {
+    width: 2em;
+    height: 2em;
+    flex-shrink: 1;
+}
+
+.itemDelButton {
+    width: 2em;
+    height: 2em;
+    flex-shrink: 1;
+    margin-left: auto;
+}
+
+.item {
+    border-style: none none none solid;
+    border-width: 0.5em;
+    margin-top: 0.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 0;
+}
+
+.itemLabel {
+    word-wrap: break-word;
+    min-width: 10%;
+    flex-shrink: 10;
+    padding: 0 0.5em 0 0.5em;
+}
