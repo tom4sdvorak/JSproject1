@@ -10,17 +10,17 @@
             <div class="container">
                 <div class="elem-containers" id="toDoAdd">
                     <form name="toDoForm" action="#" onsubmit="addNewTask()">
-                        Task: <input type="text" name="task" id="newTask" minlength="3" required>
-                        <input type="submit" id="addButton" value="Add Task">
+                        <input type="text" name="task" id="newTask" minlength="3" placeholder="Task" required>
+                        <input type="submit" id="addButton" value="+">
                     </form>
                 </div>
                 <div class="elem-containers">
-                    <h3>To Do</h3>
+                    <h2>To Do</h2>
                     <ul id="toDoList">
                     </ul>
                 </div>
                 <div class="elem-containers">
-                    <h3>Completed</h3>
+                    <h2>Completed</h2>
                     <input type="button" id="toggleButton" value="⇈" onclick="toggleDoneList()">
                     <input type="button" id="clearButton" value="Clear Completed" onclick="clearDoneList()">                           
                     <ul id="doneList">
