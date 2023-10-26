@@ -34,6 +34,7 @@ function addTask(task, done){
     }
     else{
         var list = document.getElementById('toDoList');
+        document.getElementById('counter').innerHTML = 1+Number(document.getElementById('counter').innerHTML);
     }
     list.appendChild(newListItem);
     console.log("Adding task " + task);
@@ -104,6 +105,7 @@ function markDone(e){
     if(parent.parentElement.id == 'toDoList'){
         console.log("Task done");
         var list = document.getElementById('doneList');
+        document.getElementById('counter').innerHTML = Number(document.getElementById('counter').innerHTML)-1;
         list.appendChild(parent);
         updateSavedList(true);
         updateSavedList(false);
@@ -111,6 +113,7 @@ function markDone(e){
     else if (parent.parentElement.id == 'doneList'){
         console.log("Task undone");
         var list = document.getElementById('toDoList');
+        document.getElementById('counter').innerHTML = 1+Number(document.getElementById('counter').innerHTML);
         list.appendChild(parent);
         updateSavedList(true);
         updateSavedList(false);

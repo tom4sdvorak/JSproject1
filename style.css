@@ -20,6 +20,12 @@ body {
     height: min(2em, auto);
 }
 
+.taskCounter {
+    float:right;
+    font-size: 0.7em;
+    font-style: italic;
+}
+
 #toDoAdd form{
     margin-top: 2em;
     margin-bottom: 1em;
@@ -27,7 +33,8 @@ body {
 }
 
 #newTask {
-    width: 50%;
+    min-width: 70%;
+    max-width: 100%;
     height: 2em;
     border-radius: 0.1em;
     box-shadow: 0em 0em 0.1em;
@@ -54,12 +61,14 @@ body {
 ul {
     list-style-type: none;
     padding-inline-start: 0px;
+    margin-bottom: 0.1em;
 }
 
 .itemCheckbox {
     width: 2em;
     height: 2em;
     flex-shrink: 1;
+    accent-color: #b0b0b0;
 }
 
 .itemDelButton {
@@ -129,4 +138,8 @@ input[type=button]:hover{
 
 #doneList {
     margin: 0;
+}
+
+#doneList span{
+    text-decoration: line-through;
 }
