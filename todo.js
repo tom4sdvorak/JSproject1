@@ -124,6 +124,9 @@ function markDone(e){
 function removeTask(e){
     // Remove item from list when delete button was pressed
     var parent = e.target.parentElement;
+    if(parent.parentElement.id == 'toDoList'){
+        document.getElementById('counter').innerHTML = Number(document.getElementById('counter').innerHTML)-1;
+    }
     parent.remove();
     updateSavedList(true);
     updateSavedList(false);
