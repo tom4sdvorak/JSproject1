@@ -9,7 +9,7 @@
       <body onload="loadList()">
             <div class="container">
                 <div class="elem-containers" id="toDoAdd">
-                    <form name="toDoForm" action="#" onsubmit="addNewTask();return false">
+                    <form name="toDoForm" action="#" onsubmit="addNewTask();this.reset();return false">
                         <input type="text" name="task" id="newTask" minlength="3" placeholder="Task" required>
                         <input type="submit" id="addButton" value="+">
                     </form>
