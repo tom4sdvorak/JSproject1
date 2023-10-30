@@ -37,7 +37,6 @@ function addTask(task, done){
         document.getElementById('counter').innerHTML = 1+Number(document.getElementById('counter').innerHTML);
     }
     list.appendChild(newListItem);
-    console.log("Adding task " + task);
 }
 
 // Update todo list or done list
@@ -55,12 +54,10 @@ function updateSavedList(done){
     var itemsList = [];
     for (var item of items){
         itemsList.push(item.innerHTML);
-        console.log("Saving item: " + item.innerHTML);
     }
     
     // Turn the array of items into one JSON string to save it in localStorage
     var itemsAsString = JSON.stringify(itemsList);
-    console.log("Full JSON: " + itemsAsString);
     if(done){
         localStorage.setItem('doneList', itemsAsString);
     }
@@ -90,6 +87,7 @@ function loadList(){
     }
 }
 
+// Function that is called from the form. It checks for input length and calls actual task adding function
 function addNewTask(){
     var newTask = document.getElementById('newTask').value;
     if(newTask.length < 3){
@@ -103,7 +101,6 @@ function markDone(e){
     // Move item from one list to other depending on where it was when checkbox was clicked
     var parent = e.target.parentElement;
     if(parent.parentElement.id == 'toDoList'){
-        console.log("Task done");
         var list = document.getElementById('doneList');
         document.getElementById('counter').innerHTML = Number(document.getElementById('counter').innerHTML)-1;
         list.appendChild(parent);
@@ -111,7 +108,6 @@ function markDone(e){
         updateSavedList(false);
     }
     else if (parent.parentElement.id == 'doneList'){
-        console.log("Task undone");
         var list = document.getElementById('toDoList');
         document.getElementById('counter').innerHTML = 1+Number(document.getElementById('counter').innerHTML);
         list.appendChild(parent);
@@ -130,9 +126,9 @@ function removeTask(e){
     parent.remove();
     updateSavedList(true);
     updateSavedList(false);
-    console.log("Task removed");
 }
 
+// Show or hide list of completed items and change button
 function toggleDoneList(){
     var button = document.getElementById('toggleButton');
     if(button.value == "⇈"){
@@ -145,6 +141,7 @@ function toggleDoneList(){
     }
 }
 
+// Clears all tasks from completed list.
 function clearDoneList(){
     document.getElementById('doneList').innerHTML = "";
     updateSavedList(true);
